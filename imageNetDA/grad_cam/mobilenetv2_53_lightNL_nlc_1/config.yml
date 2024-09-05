@@ -1,0 +1,112 @@
+DNL:
+
+  SEPARATE_TRAINING: False
+  MAX_SEARCH_EPOCH: 100
+  ITER_EPOCH_NUM: 10
+  WEIGHT_FACTOR: 0.5
+
+  STARTPOS_LR: 1.0
+  WARMUP_FACTOR: 1.0
+  WARMUP_ITERS: 10
+  STEPS: [50]
+  WARMUP_METHOD: 'linear'
+  GAMMA: 0.1
+
+
+MODEL:
+  NL_C: 1.0
+
+  DNL: False
+  PRETRAIN_CHOICE: 'imagenet'
+  NAME: 'mobilenetv2_53_stage_lightNL'
+  LAST_STRIDE: 1
+  PRETRAIN_PATH: 'no'
+  METRIC_LOSS_TYPE: 'triplet_center'
+  IF_LABELSMOOTH: 'on'
+  IF_WITH_CENTER: 'yes'
+  LOSS_BRANCH: 1
+  NECK: 'bnneck'
+  FEAT_DIM: 1280
+  COMPUTE_MODEL_COMPLEXITY: True
+
+
+INPUT:
+  SIZE_TRAIN: [256, 128]
+  SIZE_TEST: [256, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+
+
+DATASETS:
+  NAMES: ('market1501')
+  ROOT_DIR: ('/home/ywan1053/reid-strong-baseline-master/data')
+
+
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 600
+  BASE_LR: 0.035
+
+  CLUSTER_MARGIN: 0.3
+
+  CENTER_LR: 0.5
+  CENTER_LOSS_WEIGHT: 0.0005
+
+  RANGE_K: 2
+  RANGE_MARGIN: 0.3
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_LOSS_WEIGHT: 1
+  POSITION_LR_FACTOR: 1.0
+  WEIGHT_DECAY_POSITION: 0.0005
+
+  BIAS_LR_FACTOR: 1
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  IMS_PER_BATCH: 64
+
+  STEPS: [301, 451]
+  GAMMA: 0.1
+
+  WARMUP_FACTOR: 1.0
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: 'linear'
+
+  CHECKPOINT_PERIOD: 40
+  LOG_PERIOD: 20
+  EVAL_PERIOD: 50
+
+
+TEST:
+  IMS_PER_BATCH: 128
+  RE_RANKING: 'no'
+  WEIGHT: "path"
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+  IF_WDB: False
+  WDB_PROJECT: ''
+  WDB_NAME: ''
+  WDB_PRINT_POSITION: False
+  WDB_PRINT_ITER: False
+
+GRADCAM:
+  TARGET_LAYER_NAMES: "conv"
+  MODEL_WEIGHT_PATH: '/data/yyang409/yancheng/log/market1501/dnl/baseline/mobilenetv2_53_lightNL_baseline_shorter_nlc_1/mobilenetv2_53_stage_lightNL_model_600.pth'
+  IMAGE_SIZE: (128, 256)
+  SET_TARGET_INDEX: False
+  TARGET_CLASS_INDEX: 0
+  USE_GT_LABEL: True
+  OUT_PATH: '/home/ywan1053/reid-strong-baseline-master/grad_cam/mobilenetv2_53_lightNL_nlc_1/gradcam'
+
+
+OUTPUT_DIR: "/data/yyang409/yancheng/log/market1501/dnl/baseline/mobilenetv2_53_longer"
+
+
+

@@ -1,0 +1,294 @@
+2021-01-21 16:32:57,810 reid_baseline INFO: Using 1 GPUS
+2021-01-21 16:32:57,811 reid_baseline INFO: Namespace(config_file='grad_cam/mobilenetv2_53_DSP_VCH_DNL_SGD/featureMap/config.yml', opts=[])
+2021-01-21 16:32:57,811 reid_baseline INFO: Loaded configuration file grad_cam/mobilenetv2_53_DSP_VCH_DNL_SGD/featureMap/config.yml
+2021-01-21 16:32:57,811 reid_baseline INFO: 
+DNL:
+
+  SEPARATE_SEARCH_SCHEDULER: True
+  SEPARATE_SEARCH_STEPS: [200, 300]
+
+  LEARN_LENGTH: True
+  LEARN_STARTPOS: True
+  LENGTH_LR: 3.0
+
+  VCH_nls: 2
+
+
+
+
+  LR_SCHEDULER: 'WarmupMultiStepLR'
+  INIT_AFTER_SEARCH: True
+
+  SEPARATE_TRAINING: True
+  MAX_SEARCH_EPOCH: 400
+  ITER_EPOCH_NUM: 10
+  WEIGHT_FACTOR: 0.5
+
+  STARTPOS_LR: 3.0
+
+  WARMUP_FACTOR: 1.0
+  WARMUP_ITERS: 10
+  OPTIMIZER_TYPE: 'SGD'
+  STEPS: [100, 200, 300]
+  WARMUP_METHOD: 'linear'
+  GAMMA: 0.5
+
+
+MODEL:
+  DNL: True
+  DOUBLE_CH: True
+  DOUBLE_SP: True
+  BACKBONE_PRETRAIN: False
+
+
+
+
+  PRETRAIN_CHOICE: 'imagenet'
+  NAME: 'mobilenetv2_53_DSP_VCH'
+  LAST_STRIDE: 1
+  PRETRAIN_PATH: 'no'
+  METRIC_LOSS_TYPE: 'triplet_center'
+  IF_LABELSMOOTH: 'on'
+  IF_WITH_CENTER: 'yes'
+  LOSS_BRANCH: 1
+  NECK: 'bnneck'
+  FEAT_DIM: 1280
+  COMPUTE_MODEL_COMPLEXITY: False
+
+
+INPUT:
+  SIZE_TRAIN: [256, 128]
+  SIZE_TEST: [256, 128]
+  PROB: 0.5 # random horizontal flip
+  RE_PROB: 0.5 # random erasing
+  PADDING: 10
+
+
+DATASETS:
+  NAMES: ('market1501')
+  ROOT_DIR: ('/home/ywan1053/reid-strong-baseline-master/data')
+
+
+DATALOADER:
+  SAMPLER: 'softmax_triplet'
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+
+
+SOLVER:
+  OPTIMIZER_NAME: 'SGD'
+  MAX_EPOCHS: 1400
+  BASE_LR: 0.035
+
+  CLUSTER_MARGIN: 0.3
+
+  CENTER_LR: 0.5
+  CENTER_LOSS_WEIGHT: 0.0005
+
+  RANGE_K: 2
+  RANGE_MARGIN: 0.3
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_LOSS_WEIGHT: 1
+  POSITION_LR_FACTOR: 1.0
+  WEIGHT_DECAY_POSITION: 0.0005
+
+  BIAS_LR_FACTOR: 1
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  IMS_PER_BATCH: 64
+
+  STEPS: [801, 1001, 1201, 1301]
+  GAMMA: 0.1
+
+  WARMUP_FACTOR: 0.1
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: 'linear'
+
+  CHECKPOINT_PERIOD: 40
+  LOG_PERIOD: 20
+  EVAL_PERIOD: 20
+
+
+TEST:
+  IMS_PER_BATCH: 128
+  RE_RANKING: 'no'
+  WEIGHT: "path"
+  NECK_FEAT: 'after'
+  FEAT_NORM: 'yes'
+  IF_WDB: True
+  WDB_PROJECT: 'final_version'
+  WDB_NAME: 'mobilenetv2_53_DSP_VCH_DNL_SGD'
+  WDB_PRINT_POSITION: True
+  WDB_PRINT_ITER: True
+
+GRADCAM:
+  TARGET_LAYER_NAMES: "conv"
+  MODEL_WEIGHT_PATH: '/data/yyang409/yancheng/log/market1501/dnl/both_new/mobilenetv2_53_DSP_VCH_DNL_SGD/mobilenetv2_53_DSP_VCH_model_1400.pth'
+  IMAGE_SIZE: (128, 256)
+  USE_GT_LABEL: True
+  SET_TARGET_INDEX: False
+  TARGET_CLASS_INDEX: 0
+  OUT_PATH: '/home/ywan1053/reid-strong-baseline-master/grad_cam/mobilenetv2_53_DSP_VCH_DNL_SGD/featureMap'
+
+OUTPUT_DIR: "/data/yyang409/yancheng/log/market1501/dnl/both_new/mobilenetv2_53_DSP_VCH_DNL_SGD"
+
+
+
+
+2021-01-21 16:32:57,812 reid_baseline INFO: Running with config:
+DATALOADER:
+  NUM_INSTANCE: 4
+  NUM_WORKERS: 8
+  SAMPLER: softmax_triplet
+DATASETS:
+  NAMES: market1501
+  ROOT_DIR: /home/ywan1053/reid-strong-baseline-master/data
+DNL:
+  GAMMA: 0.5
+  INIT_AFTER_SEARCH: True
+  ITER_EPOCH_NUM: 10
+  LEARN_LENGTH: True
+  LEARN_STARTPOS: True
+  LENGTH_LR: 3.0
+  LENGTH_WEIGHT_DECAY: 0.0
+  LR_SCHEDULER: WarmupMultiStepLR
+  MAX_SEARCH_EPOCH: 400
+  OPTIMIZER_TYPE: SGD
+  SEPARATE_SEARCH_SCHEDULER: True
+  SEPARATE_SEARCH_STEPS: (200, 300)
+  SEPARATE_TRAINING: True
+  SEPARATE_TRAINING_ITER: False
+  STARTPOS_LR: 3.0
+  STARTPOS_WEIGHT_DECAY: 0.0
+  START_SEARCH: 0
+  STEPS: (100, 200, 300)
+  VCH_nls: 2
+  WARMUP_FACTOR: 1.0
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: linear
+  WDB: False
+  WEIGHT_FACTOR: 0.5
+GRADCAM:
+  IMAGE_PATH: /data/yyang409/yancheng/data/market1501/bounding_box_train/0042_c2s3_057927_04.jpg
+  IMAGE_SIZE: (128, 256)
+  MODEL_WEIGHT_PATH: /data/yyang409/yancheng/log/market1501/dnl/both_new/mobilenetv2_53_DSP_VCH_DNL_SGD/mobilenetv2_53_DSP_VCH_model_1400.pth
+  OUT_PATH: /home/ywan1053/reid-strong-baseline-master/grad_cam/mobilenetv2_53_DSP_VCH_DNL_SGD/featureMap
+  SET_TARGET_INDEX: False
+  TARGET_CLASS_INDEX: 0
+  TARGET_LAYER_NAMES: conv
+  USE_GT_LABEL: True
+INPUT:
+  PADDING: 10
+  PIXEL_MEAN: [0.485, 0.456, 0.406]
+  PIXEL_STD: [0.229, 0.224, 0.225]
+  PROB: 0.5
+  RE_PROB: 0.5
+  SIZE_TEST: [256, 128]
+  SIZE_TRAIN: [256, 128]
+MODEL:
+  BACKBONE_PRETRAIN: False
+  COMPUTE_MODEL_COMPLEXITY: False
+  CONTINUE: False
+  CONTINUE_CENTER_PATH: 
+  CONTINUE_PATH: 
+  DEVICE: cuda
+  DEVICE_ID: 0
+  DNL: True
+  DOUBLE_CH: True
+  DOUBLE_SP: True
+  FEAT_DIM: 1280
+  IF_LABELSMOOTH: on
+  IF_WITH_CENTER: yes
+  LAST_STRIDE: 1
+  LOSS_BRANCH: 1
+  METRIC_LOSS_TYPE: triplet_center
+  NAME: mobilenetv2_53_DSP_VCH
+  NECK: bnneck
+  NL_C: 0.5
+  PRETRAIN_CHOICE: imagenet
+  PRETRAIN_PATH: no
+  SUPER_MODEL_CENTER: /data/yyang409/yancheng/log/market1501/compress_300_w1/S3_bLR_00035_posLR_0001/mobilenetv2_300_compress_S3_center_param_100.pth
+  SUPER_MODEL_DIR: /data/yyang409/yancheng/log/market1501/compress_300_w1/S3_bLR_00035_posLR_0001/mobilenetv2_300_compress_S3_model_100.pth
+  SUPER_MODEL_INIT: False
+  WEIGHTS_OPEN: True
+  WIDTH_MULT: 1.0
+OUTPUT_DIR: /data/yyang409/yancheng/log/market1501/dnl/both_new/mobilenetv2_53_DSP_VCH_DNL_SGD
+SOLVER:
+  BASE_LR: 0.035
+  BIAS_LR_FACTOR: 1
+  CENTER_LOSS_WEIGHT: 0.0005
+  CENTER_LR: 0.5
+  CHECKPOINT_PERIOD: 40
+  CLUSTER_MARGIN: 0.3
+  EVAL_PERIOD: 20
+  FREEZE_POS: 1000
+  GAMMA: 0.1
+  IMS_PER_BATCH: 64
+  LOG_PERIOD: 20
+  MARGIN: 0.3
+  MAX_EPOCHS: 1400
+  MOMENTUM: 0.9
+  OPTIMIZER_NAME: SGD
+  POSITION_LR_FACTOR: 1.0
+  RANGE_ALPHA: 0
+  RANGE_BETA: 1
+  RANGE_K: 2
+  RANGE_LOSS_WEIGHT: 1
+  RANGE_MARGIN: 0.3
+  STEPS: (801, 1001, 1201, 1301)
+  TWO_STEP: False
+  TWO_STEP_MAX: 20
+  WARMUP_FACTOR: 0.1
+  WARMUP_ITERS: 10
+  WARMUP_METHOD: linear
+  WEIGHT_DECAY: 0.0005
+  WEIGHT_DECAY_BIAS: 0.0005
+  WEIGHT_DECAY_POSITION: 0.0005
+TEST:
+  FEAT_NORM: yes
+  IF_WDB: True
+  IMS_PER_BATCH: 128
+  NECK_FEAT: after
+  RE_RANKING: no
+  WDB_NAME: mobilenetv2_53_DSP_VCH_DNL_SGD
+  WDB_PRINT_ITER: True
+  WDB_PRINT_POSITION: True
+  WDB_PROJECT: final_version
+  WEIGHT: path
+=> Market1501 loaded
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   751 |    12936 |         6
+  query    |   750 |     3368 |         6
+  gallery  |   751 |    15913 |         6
+  ----------------------------------------
+=> Market1501 loaded
+Dataset statistics:
+  ----------------------------------------
+  subset   | # ids | # images | # cameras
+  ----------------------------------------
+  train    |   751 |    12936 |         6
+  query    |   750 |     3368 |         6
+  gallery  |   751 |    15913 |         6
+  ----------------------------------------
+The model is mobilenetv2_53_DSP_VCH
+The ground truth label is 14
+base
+gap
+bottleneck
+classifier
+The size of target_activations is 0
+feature_map.shape --------------------- 
+torch.Size([1, 96, 16, 8])
+Parameter containing:
+tensor([29], device='cuda:0')
+Parameter containing:
+tensor([0.4851], device='cuda:0', requires_grad=True)
+Parameter containing:
+tensor([37], device='cuda:0')
+Parameter containing:
+tensor([1.2785e-06], device='cuda:0', requires_grad=True)
+feature_map.shape --------------------- 

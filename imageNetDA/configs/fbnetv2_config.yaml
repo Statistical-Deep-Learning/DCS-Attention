@@ -1,0 +1,69 @@
+device: cuda
+dataset:
+  name: ImageNet
+  dataset_dir: /data/yyang409/yancheng/data/imagenet/ILSVRC/Data/CLS-LOC
+  image_size: 224
+  n_channels: 3
+  n_classes: 1000
+model:
+  type: imagenet
+  name: FBNetV2_supernet
+  init_mode: kaiming_fan_out
+train:
+  resume: False
+  seed: 0
+  precision: O0
+  batch_size: 64
+  subdivision: 1
+  optimizer: sgd
+  base_lr: 0.05
+  momentum: 0.9
+  nesterov: False
+  weight_decay: 0.00004
+  output_dir: /data/yyang409/yancheng/ImageNet_results/FBNetV2_supernet_multi
+  log_period: 10
+  checkpoint_period: 10
+  use_tensorboard: True
+  distributed: True
+  dataloader:
+    num_workers: 8
+    drop_last: True
+    pin_memory: True
+validation:
+  batch_size: 48
+  dataloader:
+    num_workers: 8
+    drop_last: False
+    pin_memory: True
+scheduler:
+  epochs: 200
+  type: cosine
+  lr_min_factor: 0.0
+augmentation:
+  use_random_crop: True
+  use_random_horizontal_flip: True
+  use_cutout: False
+  use_random_erasing: False
+  use_dual_cutout: False
+  use_mixup: False
+  use_ricap: False
+  use_cutmix: False
+  use_label_smoothing: False
+tta:
+  use_resize: True
+  use_center_crop: True
+  resize: 256
+tensorboard:
+  train_images: False
+  val_images: False
+  model_params: False
+gs_search:
+  optimizer: 'adam'
+  base_lr: 0.1
+  adam_betas: (0.9, 0.999)
+  weight_decay: 1e-4
+  alpha: 0.2
+  beta: 0.5
+  search_data_percent: 0.5
+  base_temperature: 5.0
+  temp_factor: -0.045

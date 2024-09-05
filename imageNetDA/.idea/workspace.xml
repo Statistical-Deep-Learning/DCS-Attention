@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5ec29518-6c29-45b1-9631-adc5155cb254" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1s5NAyLef5Zrn8NqMgqGTQCvO1D" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5ec29518-6c29-45b1-9631-adc5155cb254" name="Default Changelist" comment="" />
+      <created>1620158350828</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620158350828</updated>
+      <workItem from="1620158359284" duration="3223000" />
+      <workItem from="1620162669696" duration="4119000" />
+      <workItem from="1620235390982" duration="176000" />
+      <workItem from="1620271610330" duration="217000" />
+      <workItem from="1620326576055" duration="555000" />
+      <workItem from="1620328678788" duration="42000" />
+      <workItem from="1620332490822" duration="6717000" />
+      <workItem from="1620748145206" duration="5367000" />
+      <workItem from="1620755934680" duration="56000" />
+      <workItem from="1620756609411" duration="4048000" />
+      <workItem from="1620830949669" duration="85000" />
+      <workItem from="1620840630320" duration="1198000" />
+      <workItem from="1621052254763" duration="3164000" />
+      <workItem from="1621240508849" duration="2503000" />
+      <workItem from="1621286444150" duration="7798000" />
+      <workItem from="1621586033660" duration="57000" />
+      <workItem from="1621639232179" duration="580000" />
+      <workItem from="1621666207936" duration="1427000" />
+      <workItem from="1621895826001" duration="1059000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1040" y="169" key="#Deployment" timestamp="1620662688929">
+      <screen x="0" y="23" width="1920" height="965" />
+    </state>
+    <state x="1040" y="168" key="#Deployment/1920.203.1440.877/0.23.1920.960@0.23.1920.960" timestamp="1620158944133" />
+    <state x="1040" y="169" key="#Deployment/1920.23.1440.877/0.23.1920.965@0.23.1920.965" timestamp="1620662688929" />
+    <state x="1040" y="169" key="#Options" timestamp="1620662699011">
+      <screen x="0" y="23" width="1920" height="965" />
+    </state>
+    <state x="1040" y="168" key="#Options/1920.203.1440.877/0.23.1920.960@0.23.1920.960" timestamp="1620158952828" />
+    <state x="1040" y="169" key="#Options/1920.23.1440.877/0.23.1920.965@0.23.1920.965" timestamp="1620662699011" />
+    <state x="383" y="164" key="SettingsEditor" timestamp="1620158711592">
+      <screen x="0" y="23" width="1920" height="960" />
+    </state>
+    <state x="383" y="164" key="SettingsEditor/1920.203.1440.877/0.23.1920.960@0.23.1920.960" timestamp="1620158711592" />
+    <state x="383" y="164" key="SettingsEditor/1920.203.1440.877/0.23.1920.962@0.23.1920.962" timestamp="1620158490877" />
+    <state x="1084" y="337" key="com.intellij.ide.util.TipDialog" timestamp="1621286444290">
+      <screen x="0" y="23" width="1920" height="965" />
+    </state>
+    <state x="2733" y="308" key="com.intellij.ide.util.TipDialog/1920.23.1440.877/-1920.122.1920.1057/0.23.1920.960@1920.23.1440.877" timestamp="1621052256877" />
+    <state x="1084" y="337" key="com.intellij.ide.util.TipDialog/1920.23.1440.877/-1920.122.1920.1057/0.23.1920.965@0.23.1920.965" timestamp="1621286444290" />
+    <state x="1141" y="335" key="com.intellij.ide.util.TipDialog/1920.23.1440.877/0.23.1920.960@0.23.1920.960" timestamp="1620271610319" />
+    <state x="1141" y="337" key="com.intellij.ide.util.TipDialog/1920.23.1440.877/0.23.1920.965@0.23.1920.965" timestamp="1620830951485" />
+    <state x="2733" y="308" key="com.intellij.ide.util.TipDialog/1920.23.1440.877/0.23.1920.965@1920.23.1440.877" timestamp="1620840819700" />
+    <state x="1141" y="338" key="com.intellij.ide.util.TipDialog/1920.23.1440.877/0.23.1920.969@0.23.1920.969" timestamp="1620748236041" />
+    <state x="0" y="23" width="960" height="959" key="dock-window-1" timestamp="1621215344087">
+      <screen x="0" y="23" width="1920" height="960" />
+    </state>
+    <state x="0" y="23" width="960" height="959" key="dock-window-1/1920.23.1440.877/-1920.122.1920.1057/0.23.1920.960@1920.23.1440.877" timestamp="1621215344087" />
+    <state x="100" y="123" width="1720" height="765" key="dock-window-1/1920.23.1440.877/0.23.1920.965@0.23.1920.965" timestamp="1620755991898" />
+    <state x="5" y="23" width="1905" height="963" maximized="true" key="dock-window-1/1920.23.1440.877/0.23.1920.965@1920.23.1440.877" timestamp="1620757624942" />
+    <state x="960" y="23" width="960" height="960" key="dock-window-2" timestamp="1621215344088">
+      <screen x="0" y="23" width="1920" height="960" />
+    </state>
+    <state x="960" y="23" width="960" height="960" key="dock-window-2/1920.23.1440.877/-1920.122.1920.1057/0.23.1920.960@1920.23.1440.877" timestamp="1621215344088" />
+    <state x="773" y="262" width="600" height="525" key="ftp.server.browser" timestamp="1620158448002">
+      <screen x="0" y="23" width="1920" height="962" />
+    </state>
+    <state x="773" y="262" width="600" height="525" key="ftp.server.browser/1920.203.1440.877/0.23.1920.962@0.23.1920.962" timestamp="1620158448002" />
+  </component>
+</project>

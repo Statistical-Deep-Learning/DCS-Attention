@@ -1,0 +1,4 @@
+./modeling/backbones/final_version/mobilenetv2_DSP_VCH.py:342: UserWarning: Training mobilenetv2_53 from scratch.
+  warnings.warn("Training mobilenetv2_53 from scratch.")
+/home/ywan1053/.conda/envs/torchreid/lib/python3.7/site-packages/torch/serialization.py:454: SourceChangeWarning: source code of class 'modeling.baseline.Baseline' has changed. you can retrieve the original source code by accessing the object's source attribute or set `torch.nn.Module.dump_patches = True` and use the patch tool to revert the changes.
+  warnings.warn(msg, SourceChangeWarning)
